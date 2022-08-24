@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { appConstant } from '../app.constant';
+import { ApiService } from '../service/api.service';
 import { environment } from '../environments/environment';
 import { Product } from '../product/product';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -16,10 +17,11 @@ export class DetailsComponent implements OnInit {
 
   product: any;
   id: number;
-
+  showMessage :boolean=false;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private apiService: ApiService
   ) {}
 
   ngOnInit(): void {
@@ -29,13 +31,20 @@ export class DetailsComponent implements OnInit {
   }
 
   getDetails(id: number) {
-    this.http
-    .get(`${environment.apiUrl}${appConstant.apiRoute.products}/${id}`)
+    this.apiService
+    .httpGet(`${appConstant.apiRoute.products}/${id}`)
     .subscribe((data) => {
-        this.product = data;
-        console.log(data);
-      });
-  }
+      this.product = data;
+      console.log(data);
+    });
+}
+  productUpdate(event: boolean) {
+    if (!(event as any).target) {
+      this.showMessage = event;
+    }
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 2000);
 }
 
-  
+}

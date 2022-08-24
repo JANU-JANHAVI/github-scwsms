@@ -1,4 +1,4 @@
-<div class="product-form">
+<div class="product-form" *ngIf="productForm ">
   <h1 style="text-align:center">Form</h1>
   <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value, productForm.isValid)" novalidate >
     <div class="grid">
@@ -105,11 +105,7 @@
       </div>
     </div>
     <div class="button" style="text-align:center">
-      <button mat-raised-button
-        [disabled]="productForm.isValid"
-        class="submitbtn"
-        type="submit"
-      >
+      <button mat-raised-button class="submitbtn" type="submit"  [disabled]="productForm.invalid">
         Submit
       </button>
     </div>

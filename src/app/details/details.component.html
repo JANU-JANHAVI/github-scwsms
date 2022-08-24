@@ -3,4 +3,8 @@
 <app-list [product]="product" ></app-list>
 
 <app-form [product]="product"></app-form>
+<p *ngIf="showMessage" class="p-success-message">
+  Product has been updated successfully in product page
+</p>
+<p class="dot">.</p>
 </div>
