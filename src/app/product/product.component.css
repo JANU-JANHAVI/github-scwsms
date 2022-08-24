@@ -1,0 +1,31 @@
+.card-img {
+  object-fit: cover;
+  width: 80%;
+  height: 100px;
+  background-color: bisque;
+  margin-top: 10px;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  padding: 10px 10px;
+}
+.h1{
+  font-weight: bold;
+}
+.content{
+  background-color: aliceblue;
+}
+.likebt {
+  border: none;
+  cursor: pointer;
+}
+.sharebt {
+  border: none;
+  cursor: pointer;
+}
+.details-link {
+  display: flex;
+  gap: 50px;
+  background-color: black;
+  color: white;
+
+}

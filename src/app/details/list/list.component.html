@@ -1,0 +1,38 @@
+<div class="product-heading">
+<h1>{{product.title}}</h1>
+</div>
+<div class="productpage">
+<div class="product-image-block">
+  <img [src]="product.images[0]">
+</div>
+<div class="productlabelpart">
+  
+<div class="productlabel">
+  <span class="property">Category: </span>
+  <span class="value">{{ product.category }}</span>
+</div>
+<div class="productlabel">
+  <span class="property">Brand: </span>
+  <span class="value">{{ product.brand }}</span>
+</div>
+<div class="productlabel">
+  <span class="property">Description: </span>
+  <span class="value">{{ product.description }}</span>
+</div>
+<div class="productlabel">
+  <span class="property">Discount: </span>
+  <span class="value">{{ product.discountPercentage }}</span>
+</div>
+<div class="productlabel">
+  <span class="property">Price: </span>
+  <span class="value">{{ product.price }}</span>
+</div>
+<div class="productlabel">
+  <span class="property">Rating: </span>
+  <span class="value">{{ product.rating }}</span>
+</div>
+</div>
+</div>
+<p *ngIf="showMessage" class="p-success-message">
+Product has been updated successfully in details page
+</p>
