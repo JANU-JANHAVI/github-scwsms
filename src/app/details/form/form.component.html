@@ -1,10 +1,6 @@
 <div class="product-form">
   <h1 style="text-align:center">Form</h1>
-  <form
-    [formGroup]="productForm"
-    (ngSubmit)="onSubmit(productForm.value, productForm.isValid)"
-    novalidate
-  >
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value, productForm.isValid)" novalidate >
     <div class="grid">
       <div class="col-12 md:col-6 lg:col-3 sm:flex-nowrap">
         <mat-form-field class="example-full-width" appearance="fill">
@@ -109,7 +105,7 @@
       </div>
     </div>
     <div class="button" style="text-align:center">
-      <button
+      <button mat-raised-button
         [disabled]="productForm.isValid"
         class="submitbtn"
         type="submit"
